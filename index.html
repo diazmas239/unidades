@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Convertidor de unidades</title>
+    <meta name="author" content="Jonathan Morales, Hector Niño, Elizabeth Pérez, Juan Alberto">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #fafafa;
+        }
+
+        header {
+            width: 100%;
+            height: 48px;
+            background: #0e4bcf;
+        }
+
+        h1 {
+            color: white;
+            width: 30%;
+            padding-top: 5px;
+            margin: auto;
+        }
+
+        #front {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            padding: 30px;
+            display: block;
+        }
+
+        input {
+            width: 50%;
+            height: 25px;
+            margin: 15px;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Convertidor de unidades</h1>
+    </header>
+    <div id="Logitud">
+        <div id="front">
+            <p>Metros a Otras Unidades</p>
+            <br>
+            <label>Metros</label>
+            <input id="inputme" oninput="longme(this.value)" placeholder="Metros" type="number">
+            <label>Kilometros</label>
+            <input id="inputki" oninput="longki(this.value)" placeholder="Kilometros" type="number">
+            <label>Centimetros</label>
+            <input id="inputce" oninput="longce(this.value)" placeholder="Centimetros">
+            <label>Yardas</label>
+            <input id="inputya" oninput="longya(this.value)" placeholder="Yardas">
+            <label>Pies</label>
+            <input id="inputpi" oninput="longpi(this.value)" placeholder="Pies">
+            <label>Pulgadas</label>
+            <input id="inputpu" oninput="longpu(this.value)" placeholder="Pulgadas">
+        </div>
+        <div id="Temperatura">
+                <div id="front">
+                    <p>Fahrenheit a Kelvin y Viceversa</p>
+                    <br>
+                    <label>Fahrenheit</label>
+                    <input id="inputfa" type="number" oninput="tempfa(this.value)" placeholder="Fahrenheit">
+                    <label>Kelvin</label>
+                    <input id="inputke" type="number" oninput="tempke(this.value)" placeholder="Kelvin">
+                </div>
+            </div>
+        <script>
+      function longme (valorvalor) {
+      document.getElementById("inputme").value = valor * 1;
+      }
+        function longki(valor) {
+            document.getElementById("inputki").value = valor / 1000;
+        }
+
+        function longce(valor) {
+            document.getElementById("inputce").value = valor * 100;
+        }
+
+        function longya(valor) {
+            document.getElementById("inputya").value = valor * 1.094;
+        }
+
+        function longpi(valor) {
+            document.getElementById("inputpi").value = valor * 3.281;
+        }
+
+        function longpu(valor) {
+            document.getElementById("inputpu").value = valor * 39.37;
+        }
+        function tempfa(valor) {
+                document.getElementById("inputfa").value = (valor - 273) * 1.8 + 32;
+            }
+        function tempke(valor) {
+                document.getElementById("inputfa").value = (valor - 32) * 1.8 + 273;
+            }   
+        </script>
+    </div>
+</body>
+</html>
